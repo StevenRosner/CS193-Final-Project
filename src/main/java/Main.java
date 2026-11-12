@@ -8,8 +8,8 @@ public class Main {
         IO.println("     WEATHER OUTFIT ADVISOR");
         IO.println("==============================");
 
-        String location = IO.readln("Enter your location:\n");
-
+        String location = IO.readln("Enter your city and state:\n");
+        location += ",US";
         IO.println();
         IO.println("Fetching weather data...");
 
