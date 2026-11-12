@@ -1,0 +1,15 @@
+# Java compiled files
+*.class
+bin/
+target/
+
+# VS Code settings
+.vscode/
+
+# API keys and secrets
+.env
+config.properties
+
+# Operating system files
+.DS_Store
+Thumbs.db
