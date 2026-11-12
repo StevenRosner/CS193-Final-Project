@@ -1,4 +1,7 @@
 package main.java;
+
+import java.io.IOException;
+
 public class Main {
     void main() {
         IO.println("==============================");
@@ -7,7 +10,21 @@ public class Main {
 
         String location = IO.readln("Enter your location:\n");
 
-        IO.println("Your location: " + location);
-        IO.println("Welcome to Weather Outfit Advisor");
+        IO.println();
+        IO.println("Fetching weather data...");
+
+        try {
+            String weatherData = WeatherAPI.getCurrentWeather(location);
+
+            IO.println("\nWeather API Response:");
+            IO.println(weatherData);
+        } catch (IOException e) {
+            IO.println("Error retrieving weather: " + e.getMessage());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            IO.println("Weather request was interrupted.");
+        } catch (IllegalStateException e) {
+            IO.println(e.getMessage());
+        }
     }
 }
