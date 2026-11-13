@@ -18,11 +18,11 @@ public class WeatherData {
         return city;
     }
 
-    public String getHumidity() {
+    public int getHumidity() {
         return humidity;
     }
 
-    public String getTemp() {
+    public double getTemp() {
         return temp;
     }
 
