@@ -14,10 +14,16 @@ public class Main {
         IO.println("Fetching weather data...");
 
         try {
-            String weatherData = WeatherAPI.getCurrentWeather(location);
+            WeatherData weather = WeatherAPI.getCurrentWeather(location);
 
-            IO.println("\nWeather API Response:");
-            IO.println(weatherData);
+            System.out.println();
+            System.out.println("====== CURRENT WEATHER =======");
+            System.out.println("Location: " + weather.getCity());
+            System.out.println("Temperature: " + weather.getTemp() + "°F");
+            System.out.println("Humidity: " + weather.getHumidity() + "%");
+            System.out.println("Conditions: " + weather.getDescription());
+            System.out.println("==============================");
+
         } catch (IOException e) {
             IO.println("Error retrieving weather: " + e.getMessage());
         } catch (InterruptedException e) {
