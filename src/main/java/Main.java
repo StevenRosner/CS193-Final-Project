@@ -5,10 +5,10 @@ import java.io.IOException;
 public class Main {
     void main() {
         IO.println("==============================");
-        IO.println("     WEATHER OUTFIT ADVISOR");
+        IO.println("    WEATHER OUTFIT ADVISOR");
         IO.println("==============================");
 
-        String location = IO.readln("Enter your city and state:\n");
+        String location = IO.readln("Enter your city and state (City, ST):\n");
         location += ",US";
         IO.println();
         IO.println("Fetching weather data...");
