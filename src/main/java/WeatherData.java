@@ -6,12 +6,14 @@ public class WeatherData {
     private double temp;
     private int humidity;
     private String description;
+    private double feelsLike;
 
-    public WeatherData(String city, double temp, int humidity, String description) {
+    public WeatherData(String city, double temp, double feelsLike, int humidity, String description) {
         this.city = city;
         this.temp = temp;
         this.humidity = humidity;
         this.description = description;
+        this.feelsLike = feelsLike;
     }
 
     public String getCity() {
@@ -28,6 +30,10 @@ public class WeatherData {
 
     public String getDescription() {
         return description;
+    }
+
+    public double getFeelsLike() {
+        return feelsLike;
     }
 
 }

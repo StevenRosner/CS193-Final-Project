@@ -15,6 +15,7 @@ import com.google.gson.JsonParser;
 public class WeatherAPI {
 
     public static WeatherData getCurrentWeather(String location) throws IOException, InterruptedException {
+        // API key held in env so its not public
         String key = System.getenv("OPENWEATHER_API_KEY");
 
         if (key == null || key.isBlank()) {
@@ -33,7 +34,7 @@ public class WeatherAPI {
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
         // get response from request
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
+        // any code but 200 is a failure
         if (response.statusCode() != 200) {
             throw new IOException("Weather API Request failed. Status code: " + response.statusCode());
         }
@@ -46,11 +47,12 @@ public class WeatherAPI {
 
         double temp = main.get("temp").getAsDouble();
         int humidity = main.get("humidity").getAsInt();
+        double feelsLike = main.get("feels_like").getAsDouble();
         // weather is an array inside the json response
         JsonArray weatherArray = json.getAsJsonArray("weather");
-
+        // take first part of weather array as JSON, parse as string
         String description = weatherArray.get(0).getAsJsonObject().get("description").getAsString();
 
-        return new WeatherData(city, temp, humidity, description);
+        return new WeatherData(city, temp, feelsLike, humidity, description);
     }
 }
