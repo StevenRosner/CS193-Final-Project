@@ -1,0 +1,115 @@
+
+{
+    "temperatureRules": [
+        {
+            "minTemp": -100,
+            "maxTemp": 32,
+            "minUpperWarmth": 7,
+            "minLowerWarmth": 2
+        },
+        {
+            "minTemp": 33,
+            "maxTemp": 50,
+            "minUpperWarmth": 5,
+            "minLowerWarmth": 2
+        },
+        {
+            "minTemp": 51,
+            "maxTemp": 65,
+            "minUpperWarmth": 3,
+            "minLowerWarmth": 1
+        },
+        {
+            "minTemp": 66,
+            "maxTemp": 80,
+            "minUpperWarmth": 1,
+            "minLowerWarmth": 1
+        },
+        {
+            "minTemp": 81,
+            "maxTemp": 150,
+            "minUpperWarmth": 1,
+            "minLowerWarmth": 1
+        }
+    ],
+
+    "weatherRules": [
+        {
+            "condition": "rain",
+            "upperRainProtection": true,
+            "additionalUpperWarmth": 0,
+            "accessories": ["Umbrella"]
+        },
+        {
+            "condition": "snow",
+            "upperRainProtection": true,
+            "additionalUpperWarmth": 1,
+            "accessories": ["Gloves", "Winter hat"]
+        },
+        {
+            "condition": "wind",
+            "upperRainProtection": false,
+            "additionalUpperWarmth": 1,
+            "accessories": []
+        }
+    ],
+
+    "clothing": [
+        {
+            "name": "T-shirt",
+            "category": "upper",
+            "layers": 1,
+            "warmth": 1,
+            "priority": 1,
+            "rainProtection": false
+        },
+        {
+            "name": "Crewneck",
+            "category": "upper",
+            "layers": 1,
+            "warmth": 2,
+            "priority": 1,
+            "rainProtection": false
+        },
+        {
+            "name": "Hoodie",
+            "category": "upper",
+            "layers": 1,
+            "warmth": 3,
+            "priority": 2,
+            "rainProtection": false
+        },
+        {
+            "name": "Winter coat",
+            "category": "upper",
+            "layers": 1,
+            "warmth": 4,
+            "priority": 3,
+            "rainProtection": true
+        },
+        {
+            "name": "Rain jacket",
+            "category": "upper",
+            "layers": 1,
+            "warmth": 1,
+            "priority": 3,
+            "rainProtection": true
+        },
+        {
+            "name": "Shorts",
+            "category": "lower",
+            "layers": 1,
+            "warmth": 1,
+            "priority": 1,
+            "rainProtection": false
+        },
+        {
+            "name": "Pants",
+            "category": "lower",
+            "layers": 1,
+            "warmth": 2,
+            "priority": 1,
+            "rainProtection": false
+        }
+    ]
+}
